@@ -29,6 +29,8 @@ stages:
       displayName: Compile Sass assets
     - task: gulp@1
       displayName: Run gulp tasks
+    - task: azWebAppSettings@1
+      displayName: Run az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings WEBSITES_PORT=8000
     - script: echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt
       displayName: Write build info
       workingDirectory: $(wwwrootDir)
